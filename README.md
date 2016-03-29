@@ -138,7 +138,7 @@ bucket.newQuery()
 ```
 
 
-# Development
+## Development
 
 As SimpleNoSQL, this project still isn't stable. You can use it with Gradle and [JitPack](https://jitpack.io):
 
@@ -156,7 +156,7 @@ compile 'com.github.xmartlabs:RxSimpleNoSQL:-SNAPSHOT'
 
 RxSimpleNoSQL requires at minimum Java 7 or Android 2.2.
 
-# License
+## License
 
 ```
 Copyright 2016 Xmartlabs SRL.

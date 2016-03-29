@@ -146,7 +146,8 @@ you can carry this out the same way with `Observable#toSortedList`.
 
 ## Development
 
-As SimpleNoSQL, this project still isn't stable. You can use it with Gradle and [JitPack](https://jitpack.io):
+As SimpleNoSQL, this project still isn't stable (the API can change at any time). You can use it with Gradle and
+[JitPack](https://jitpack.io):
 
 ```groovy
 repositories {

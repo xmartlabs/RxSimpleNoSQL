@@ -36,7 +36,7 @@ public class Bucket<T extends Entity> {
     return new BucketQueryBuilder(context, type, bucketId);
   }
 
-  class BucketQueryBuilder {
+  public class BucketQueryBuilder {
     private QueryBuilder<T> queryBuilder;
 
     public BucketQueryBuilder(Context context, Class<T> type, String bucketId) {

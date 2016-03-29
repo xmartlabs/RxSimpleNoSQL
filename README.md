@@ -143,7 +143,6 @@ bucket.newQuery()
 (https://github.com/Jearil/SimpleNoSQL/blob/master/SimpleNoSQL/src/main/java/com/colintmiller/simplenosql/threading/DataDispatcher.java#L140),
 you can carry this out the same way with `Observable#toSortedList`. 
 
-
 ## Development
 
 As SimpleNoSQL, this project still isn't stable (the API can change at any time). You can use it with Gradle and
@@ -162,6 +161,18 @@ compile 'com.github.xmartlabs:RxSimpleNoSQL:-SNAPSHOT'
 ```
 
 RxSimpleNoSQL requires at minimum Java 7 or Android 2.2.
+
+## Build
+
+[![Build Status](https://travis-ci.org/xmartlabs/RxSimpleNoSQL.svg?branch=master)](https://travis-ci.org/xmartlabs/RxSimpleNoSQL)
+
+To build:
+
+```shell
+git clone https://github.com/xmartlabs/RxSimpleNoSQL.git
+cd RxSimpleNoSQL/
+./gradlew build
+```
 
 ## License
 

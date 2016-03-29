@@ -1,7 +1,7 @@
 # RxSimpleNoSQL
 
-Reactive extensions for [SimpleNoSQL](https://github.com/Jearil/SimpleNoSQL). Manipulate the entities using `Observable`
-and `Completable`.
+Reactive extensions for [SimpleNoSQL](https://github.com/Jearil/SimpleNoSQL). Manipulate entities using `Observable`s
+and `Completable`s.
 
 ## Examples
 

@@ -46,9 +46,9 @@ We first start creating a bucket:
 Bucket<SampleBean> bucket = new Bucket<>(context, SampleBean.class, "bucketId");
 ```
 
-## Save
+### Save
 
-### Single
+#### Single
 
 ```java
 SampleBean entity = new SampleBean();
@@ -65,7 +65,7 @@ bucket.newQuery()
         .subscribe();
 ```
 
-### Multiple
+#### Multiple
 
 ```java
 SampleBean entity2 = new SampleBean();
@@ -81,9 +81,9 @@ bucket.newQuery()
         .subscribe();
 ```
 
-## Retrieve
+### Retrieve
 
-### Single
+#### Single
 
 ```java
 bucket.newQuery()
@@ -92,7 +92,7 @@ bucket.newQuery()
         .subscribe(sampleBean -> System.out.println("Name: %s", sampleBean.getName()));
 ```
 
-### Multiple
+#### Multiple
 
 ```java
 bucket.newQuery()
@@ -101,7 +101,7 @@ bucket.newQuery()
         .subscribe(sampleBean -> System.out.println("Name: %s", sampleBean.getName()));
 ```
 
-### All
+#### All
 
 ```java
 bucket.newQuery()
@@ -109,9 +109,9 @@ bucket.newQuery()
         .subscribe(sampleBean -> System.out.println("Name: %s", sampleBean.getName()));
 ```
 
-## Delete
+### Delete
 
-### Single
+#### Single
 
 ```java
 bucket.newQuery()
@@ -120,7 +120,7 @@ bucket.newQuery()
         .subscribe();
 ```
 
-### Multiple
+#### Multiple
 
 ```java
 bucket.newQuery()
@@ -129,13 +129,19 @@ bucket.newQuery()
         .subscribe();
 ```
 
-### All
+#### All
 
 ```java
 bucket.newQuery()
         .delete()
         .subscribe();
 ```
+
+### Sorting
+
+[As SimpleNoSQL sorts the results in memory]
+(https://github.com/Jearil/SimpleNoSQL/blob/master/SimpleNoSQL/src/main/java/com/colintmiller/simplenosql/threading/DataDispatcher.java#L140),
+you can carry this out the same way with `Observable#toSortedList`. 
 
 
 ## Development

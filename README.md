@@ -12,28 +12,28 @@ class SampleBean implements Entity {
     private String name;
     private String id;
     private Map<String, String> mapping;
-    
+
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
-    
+
     public Map<String, String> getMapping() {
         return mapping;
     }
-    
+
     public void setMapping(Map<String, String> mapping) {
         this.mapping = mapping;
     }
@@ -122,11 +122,21 @@ bucket.newQuery()
 
 #### Multiple
 
+Currently, SimpleNoSQL does not support the usage of `filter` for the `delete` operation.
+There's an issue [opened](https://github.com/Jearil/SimpleNoSQL/issues/34).
+
+Nevertheless, this functionality can be achieved by first retrieving the entities to be deleted and then performing the actual `delete` operation individually:
+
 ```java
-bucket.newQuery()
+Observable<SampleBean> itemsToDelete = bucket.newQuery()
         .filter(sampleBean -> sampleBean.getName().startsWith("S"))
-        .delete()
-        .subscribe();
+        .retrieve()
+
+Completable deleteCompletable = Completable.concat(
+                                  itemsToDelete
+                                      .map(item -> bucket.newQuery()
+                                                      .entityId(item.getId()))
+                                                      .delete());
 ```
 
 #### All
@@ -141,7 +151,7 @@ bucket.newQuery()
 
 [As SimpleNoSQL sorts the results in memory]
 (https://github.com/Jearil/SimpleNoSQL/blob/master/SimpleNoSQL/src/main/java/com/colintmiller/simplenosql/threading/DataDispatcher.java#L140),
-you can carry this out the same way with `Observable#toSortedList`. 
+you can carry this out the same way with `Observable#toSortedList`.
 
 ## Development
 

@@ -167,7 +167,7 @@ repositories {
 Then adding the dependency:
 
 ```groovy
-implementation 'com.github.xmartlabs:RxSimpleNoSQL:-SNAPSHOT'
+api 'com.github.xmartlabs:RxSimpleNoSQL:-SNAPSHOT'
 ```
 
 RxSimpleNoSQL requires at minimum Java 7 or Android 2.2.
